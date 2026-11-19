@@ -67,7 +67,7 @@ A short rule in the agent's instructions plus a hook makes a large difference: i
 ## Development
 
 ```
-python3 -m pytest          # about 380 tests, no network
+python3 -m pytest          # 365 tests, no network
 ruff check src tests
 ```
 
