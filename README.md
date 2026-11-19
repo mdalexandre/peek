@@ -62,7 +62,7 @@ peek starts no shell and gives the command no stdin. For pipes and globs, wrap t
 - [Claude Code](integrations/claude-code/README.md): a `peek` skill, a `CLAUDE.md` rule, and a PreToolUse hook that refuses an unbounded Read of a file over 200 lines and hands back the exact peek command instead.
 - [Codex CLI](integrations/codex/README.md): an `AGENTS.md` rule and an advisory PostToolUse hook that reminds Codex to use peek when a shell command reads a file over 200 lines.
 
-A short rule in the agent's instructions plus a hook makes a large difference: in our own sessions, peek was used for about 1% of shell calls when it was only mentioned in a long instruction file.
+Why both a rule and a hook: in our own sessions, when peek was only mentioned deep in a long instruction file, agents used it for about 1% of shell calls. The integrations pair a short, unconditional rule with a hook that acts at the moment of the read.
 
 ## Development
 
