@@ -1,0 +1,35 @@
+[project]
+name = "peek"
+version = "0.1.0"
+description = "Bounded file windows and command runs for AI coding agents"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["agents", "cli", "llm", "context-window", "claude-code", "codex"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+peek = "peek.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/peek"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra -p no:cacheprovider --basetemp=.pytest-tmp"
+
+[tool.mypy]
+mypy_path = "src"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = [".pytest-tmp", ".venv", ".uv-cache", ".mypy-cache"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

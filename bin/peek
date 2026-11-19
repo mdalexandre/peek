@@ -1,0 +1,5 @@
+#!/bin/sh
+here=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd -P) || exit 2
+PEEK_PROG="$here/bin/peek"
+export PEEK_PROG
+PYTHONPATH="$here/src" PYTHONDONTWRITEBYTECODE=1 exec python3 -X utf8 -P -m peek "$@"
