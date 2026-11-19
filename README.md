@@ -11,9 +11,11 @@
 
 # peek
 
-**Bounded file windows and command runs for AI coding agents.**
+### A 100,000-line log. Your agent sees it 100 lines at a time.
 
-peek is a small command line tool that sits between an AI coding agent (Claude Code, Codex CLI, or any agent with a shell) and the files and commands it touches. Every peek call prints at most about 200 lines, and its last line tells the agent exactly what to run next. The agent can still read everything, one bounded step at a time, but no single result can flood its context window.
+Behind every coding agent is more text than it can hold: a monorepo, a build log, a test run that scrolls for minutes. peek is a window onto it. Each call shows at most 100 lines and, while more remains, names the next window. Everything else stays where it is, whole and unread, until the agent asks for it.
+
+**Bounded file windows and command runs for AI coding agents.** peek is a small command line tool that sits between an AI coding agent (Claude Code, Codex CLI, or any agent with a shell) and the files and commands it touches. A file window holds at most 100 lines; a long command run shows its first 30 and last 20 lines and saves the rest. The last line tells the agent exactly what to run next, or that it has reached the end, so it can still read everything, one bounded step at a time, but no single result can flood its context window.
 
 - [The problem](#the-problem)
 - [What peek does, side by side](#what-peek-does-side-by-side)
