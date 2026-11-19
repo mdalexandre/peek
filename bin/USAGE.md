@@ -1,6 +1,6 @@
 # peek: bounded views of a file or a command
 
-Use the full launcher path:
+Commands:
 
     peek file PATH [--lines A:B]
     peek run -- CMD [ARGS...]
